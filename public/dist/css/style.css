@@ -1,0 +1,59 @@
+@font-face {
+	font-family: 'Monda-Regular';
+	src: local('Monda-Regular'), url(../../../src/fonts/Monda-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'Monda-Bold';
+	src: local('Monda-Bold'), url(../../../src/fonts/Monda-Bold.ttf);
+}
+
+.button1 {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-bottom: 4px solid #FEECDC;
+	user-select: none;
+	color: #FEECDC;
+	font-family: Monda-Bold;
+}
+
+.button2 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 120px;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 20px;
+	user-select: none;
+	background-color: #FEECDC;
+	color: #343A40;
+	font-family: Monda-Bold;
+}
+
+*{
+	-ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
+.navbar1 {
+	position: fixed;
+	width: 100%;
+}
+
+.flip {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+.score1 {
+	border: 2px solid black;
+	border-radius: 20px;
+}
