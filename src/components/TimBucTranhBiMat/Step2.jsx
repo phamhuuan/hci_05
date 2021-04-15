@@ -89,7 +89,7 @@ const Step2 = () => {
 				let cardIndex = allCardsData.findIndex(x => x.tk === cards[index].text);
 				expectedResult = allCardsData[cardIndex].vn;
 			}
-			setState({...state, selectedCard: state.cards[index], selectedIndex: index, expectedResult, cards: [...cards]});
+			setState({...state, selectedCard: state.cards[index], selectedIndex: index, expectedResult, cards: [...cards], error: 0});
 		} else {
 			if (index === state.selectedIndex) return;
 			if (state.cards[index].text === state.expectedResult) {
