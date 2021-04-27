@@ -2,10 +2,9 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import BeautyImage from '../../constants/BeautyImage';
 import KeyData from '../../constants/KeyData';
-import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Step2 = () => {
+const Step2 = ({goToStep2}) => {
 	const [state, setState] = useState({
 		bgImage: BeautyImage.ImageUrl[~~(Math.random() * 9)],
 		type: 0,
@@ -17,7 +16,7 @@ const Step2 = () => {
 		selectedIndex: -1,
 		expectedResult: '',
 	});
-	const [timeLeft, setTimeLeft] = useState(300);
+	const [timeLeft, setTimeLeft] = useState(120);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -56,7 +55,7 @@ const Step2 = () => {
 		});
 		cards = cards.sort((x, y) => x.num - y.num);
 		setState({...state, cards});
-		setTimeLeft(300);
+		setTimeLeft(120);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state.type]);
 
@@ -65,6 +64,7 @@ const Step2 = () => {
 	}, [generateMap]);
 
 	const onSelect = useCallback((index) => {
+		console.log(state);
 		if (state.selectedCard === null) {
 			let cards = state.cards;
 			let allCardsData = [];
@@ -89,7 +89,7 @@ const Step2 = () => {
 				let cardIndex = allCardsData.findIndex(x => x.tk === cards[index].text);
 				expectedResult = allCardsData[cardIndex].vn;
 			}
-			setState({...state, selectedCard: state.cards[index], selectedIndex: index, expectedResult, cards: [...cards], error: 0});
+			setState({...state, selectedCard: state.cards[index], selectedIndex: index, expectedResult, cards: [...cards]});
 		} else {
 			if (index === state.selectedIndex) return;
 			if (state.cards[index].text === state.expectedResult) {
@@ -97,8 +97,9 @@ const Step2 = () => {
 				cards[index].visible = false;
 				cards[state.selectedIndex].visible = false;
 				if (state.cardLeft === 2) {
-					toast('Chúc mừng, bạn đã chiến thắng', {type: 'success'});
-					generateMap();
+					// toast('	', {type: 'success'});
+					// generateMap();
+					goToStep2(100);
 				} else {
 					setState({...state, cards: [...cards], selectedCard: null, selectedIndex: -1, cardLeft: state.cardLeft - 2, totalPoint: state.totalPoint + 10});
 				}
@@ -106,14 +107,15 @@ const Step2 = () => {
 				let cards = state.cards;
 				cards[state.selectedIndex].selected = false;
 				if (state.error === 2) {
-					toast(`Trò chơi đã kết thúc, điểm của bạn: ${state.totalPoint}`, {type: 'info'});
-					generateMap();
+					// toast(`Trò chơi đã kết thúc, điểm của bạn: ${state.totalPoint}`, {type: 'info'});
+					// generateMap();
+					goToStep2(state.totalPoint);
 				} else {
 					setState({...state, error: state.error + 1, selectedCard: null, selectedIndex: -1, cards: [...cards]});
 				}
 			}
 		}
-	}, [generateMap, state]);
+	}, [goToStep2, state]);
 
 	const game = useMemo(() => {
 		if (state.cards.length < 1) return <div style={{display: 'flex', flexDirection: 'column', flex: 4, marginTop: 30, marginLeft: 30, backgroundImage: `url(${state.bgImage})`, backgroundSize: 'cover'}} />
@@ -239,7 +241,6 @@ const Step2 = () => {
 				{game}
 				{score}
 			</div>
-			<ToastContainer />
 		</div>
 	);
 };

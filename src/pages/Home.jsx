@@ -20,17 +20,16 @@ const Home = () => {
 
 	const handleKeyDown = (event) => {
 		const {key} = event;
-		console.log(key);
 		if (AmDau.amDauN.includes(key)) {
-			if (!state.amDau.includes(key)) setState({...state, amDau: [...state.amDau, key], hasAmDau: true, numberOfKeys: state.numberOfKeys + 1});
+			if (!state.amDau.includes(key)) setState(state => ({...state, amDau: [...state.amDau, key], hasAmDau: true, numberOfKeys: state.numberOfKeys + 1}));
 		} else if (AmChinh.amChinhN.includes(key)) {
-			if (!state.amChinh.includes(key)) setState({...state, amChinh: [...state.amChinh, key], hasAmChinh: true, numberOfKeys: state.numberOfKeys + 1});
+			if (!state.amChinh.includes(key)) setState(state => ({...state, amChinh: [...state.amChinh, key], hasAmChinh: true, numberOfKeys: state.numberOfKeys + 1}));
 		} else if (AmCuoi.amCuoiN.includes(key)) {
-			if (!state.amCuoi.includes(key)) setState({...state, amCuoi: [...state.amCuoi, key], hasAmCuoi: true, numberOfKeys: state.numberOfKeys + 1});
+			if (!state.amCuoi.includes(key)) setState(state => ({...state, amCuoi: [...state.amCuoi, key], hasAmCuoi: true, numberOfKeys: state.numberOfKeys + 1}));
 		} else {
-			setState({...state, numberOfKeys: state.numberOfKeys + 1, shouldSearch: false});
+			setState(state => ({...state, numberOfKeys: state.numberOfKeys + 1, shouldSearch: false}));
 		}
-	}
+	};
 
 	const handleKeyUp = () => {
 		if (state.numberOfKeys === 1) {
@@ -40,12 +39,12 @@ const Home = () => {
 				if (state.hasAmDau) amDau = AmDau.convertKey(state.amDau, amChinh);
 				if (state.hasAmCuoi) amCuoi = AmCuoi.convertKey(state.amCuoi);
 				if (amChinh !== '') setState({amDau: [], amChinh: [], amCuoi: [], hasAmChinh: false, hasAmDau: false, hasAmCuoi: false, shouldSearch: true, numberOfKeys: 0, value: state.value + amDau + amChinh + amCuoi + ' '});
-				else setState({...state, amDau: [], amChinh: [], amCuoi: [], hasAmChinh: false, hasAmDau: false, hasAmCuoi: false, shouldSearch: true, numberOfKeys: 0});
+				else setState(state => ({...state, amDau: [], amChinh: [], amCuoi: [], hasAmChinh: false, hasAmDau: false, hasAmCuoi: false, shouldSearch: true, numberOfKeys: 0}));
 			} else {
-				setState({...state, amDau: [], amChinh: [], amCuoi: [], hasAmChinh: false, hasAmDau: false, hasAmCuoi: false, shouldSearch: true, numberOfKeys: 0});
+				setState(state => ({...state, amDau: [], amChinh: [], amCuoi: [], hasAmChinh: false, hasAmDau: false, hasAmCuoi: false, shouldSearch: true, numberOfKeys: 0}));
 			}
 		} else {
-			setState({...state, numberOfKeys: state.numberOfKeys - 1});
+			setState(state => ({...state, numberOfKeys: state.numberOfKeys - 1}));
 		}
 	};
 
