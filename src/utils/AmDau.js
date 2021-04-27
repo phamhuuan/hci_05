@@ -1,12 +1,11 @@
 import KeyCode from "./KeyCode";
 
-const stringArr = ['i', 'í', 'ì', 'ị', 'ĩ', 'ỉ', 'e', 'é', 'è', 'ẹ', 'ẽ', 'ẻ', 'ê', 'ế', 'ề', 'ệ', 'ễ', 'ể'];
+const stringArr = ['i', 'í', 'ì', 'ị', 'ĩ', 'ỉ', 'y', 'ý', 'ỳ', 'ỵ', 'ỹ', 'ỷ', 'e', 'é', 'è', 'ẹ', 'ẽ', 'ẻ', 'ê', 'ế', 'ề', 'ệ', 'ễ', 'ể'];
 
 export default class AmDau {
 	static amDauN = ['q', 'w', 'e', 'a', 's', 'd'];
 	static convertKey(keys, nextString) {
 		keys = keys.map(key => KeyCode.convertKey(key)).sort().join('');
-		console.log(keys);
 		switch (keys) {
 			case 'kr':
 				if (stringArr.includes(nextString[0])) return 'ngh';
