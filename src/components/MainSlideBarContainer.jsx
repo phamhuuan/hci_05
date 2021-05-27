@@ -206,6 +206,13 @@ const MainSlideBarContainer = () => {
 										<p>Tìm bức tranh bị ẩn</p>
 									</Link>
 								</li>
+								
+								<li className="nav-item">
+									<Link to={PathString.GameHangMan} className={`nav-link ${location.pathname === PathString.GameHangMan ? 'active' : ''}`}>
+										<i style={{marginLeft: 15}} className="fas fa-gamepad nav-icon"></i>
+										<p>HangMan</p>
+									</Link>
+								</li>
 							</ul>
 						</li>
 						{/* <li className="nav-item">
