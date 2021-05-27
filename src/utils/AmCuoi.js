@@ -5,29 +5,29 @@ export default class AmCuoi {
 	static convertKey(keys) {
 		keys = keys.map(key => KeyCode.convertKey(key)).sort().join('');
 		switch (keys) {
-			case 'tk':
+			case '-t-k':
 				return 'p';
-			case 'nk':
+			case '-n-k':
 				return 'c';
-			case 'nt':
+			case '-n-t':
 				return 't';
-			case 'gk':
+			case '-g-k':
 				return 'ch';
-			case 'gj':
+			case '-g-j':
 				return 'u';
-			case 'g':
+			case '-g':
 				return 'ng';
-			case 'j':
+			case '-j':
 				return 'i';
-			case 'jn':
+			case '-j-n':
 				return 'y';
-			case 'k':
+			case '-k':
 				return 'nh';
-			case 't':
+			case '-t':
 				return 'm';
-			case 'n':
+			case '-n':
 				return 'n';
-			case 'jk':
+			case '-j-k':
 				return 'o';
 			default:
 				return '';

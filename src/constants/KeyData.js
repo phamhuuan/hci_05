@@ -189,4 +189,25 @@ export default class KeyData {
 		{id: 11, vn: 'n', tk: '-N'},
 		{id: 12, vn: 'o', tk: '-JK'},
 	];
+	static So = [
+		{id: 1, vn: '1', tk: '#S-'},
+		{id: 2, vn: '2', tk: '#K-'},
+		{id: 3, vn: '3', tk: '#R-'},
+		{id: 4, vn: '4', tk: '#N-'},
+		{id: 5, vn: '5', tk: '#H'},
+		{id: 6, vn: '6', tk: '#W'},
+		{id: 7, vn: '7', tk: '#-J'},
+		{id: 8, vn: '8', tk: '#-N'},
+		{id: 9, vn: '9', tk: '#-T'},
+		{id: 10, vn: '-1', tk: '#T-'},
+		{id: 11, vn: '-2', tk: '#P-'},
+		{id: 12, vn: '-3', tk: '#H-'},
+		{id: 13, vn: '-4', tk: '#S'},
+		{id: 14, vn: '-5', tk: '#I'},
+		{id: 15, vn: '-6', tk: '#Y'},
+		{id: 16, vn: '-7', tk: '#-G'},
+		{id: 17, vn: '-8', tk: '#-K'},
+		{id: 18, vn: '-9', tk: '#E'},
+		{id: 19, vn: '0', tk: '#O'},
+	];
 };

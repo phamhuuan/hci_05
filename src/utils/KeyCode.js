@@ -13,21 +13,21 @@ export default class KeyCode {
 			case '0':
 				return '#';
 			case 'q':
-				return 's';
+				return 's-';
 			case 'w':
-				return 'k';
+				return 'k-';
 			case 'e':
-				return 'r';
+				return 'r-';
 			case 'r':
-				return 'n';
+				return 'n-';
 			case 't':
-				return 'h';
+				return 'h-';
 			case 'a':
-				return 't';
+				return 't-';
 			case 's':
-				return 'p';
+				return 'p-';
 			case 'd':
-				return 'h';
+				return 'h-';
 			case 'f':
 				return 'n';
 			case 'g':
@@ -41,21 +41,21 @@ export default class KeyCode {
 			case 'i':
 				return 'w';
 			case 'o':
-				return 'j';
+				return '-j';
 			case 'p':
-				return 'n';
+				return '-n';
 			case '[':
-				return 't';
+				return '-t';
 			case 'j':
 				return 'i';
 			case 'k':
 				return 'y';
 			case 'l':
-				return 'j';
+				return '-j';
 			case ';':
-				return 'g';
+				return '-g';
 			case '\'':
-				return 'k';
+				return '-k';
 			case 'n':
 				return 'e';
 			case 'm':

@@ -21,7 +21,7 @@ const MainSlideBarContainer = () => {
 				<div className="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div className="image">
 						<img
-							src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/148203412_1877504562396997_7948356194534226096_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=kuSY0gWOwlAAX-JPZZ6&_nc_ht=scontent.fhan2-1.fna&oh=94e0d674b82cef6adb030595a1734fa4&oe=6098515B"
+							src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/148203412_1877504562396997_7948356194534226096_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=b0Syg3lo66kAX9TdjIh&_nc_ht=scontent.fhan2-2.fna&oh=e132b5787c0ffa76b012bd0c0dd928e3&oe=60BBE9DB"
 							alt="UserImage"
 							className="img-circle elevation-2"
 						/>

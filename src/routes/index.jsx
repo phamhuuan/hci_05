@@ -4,7 +4,7 @@ import PathString from '../constants/PathString';
 import Contact from '../pages/Contact';
 import HocGoAmChinh from '../pages/HocGoAmChinh';
 import HocGoAmCuoi from '../pages/HocGoAmCuoi';
-import HocGoAmDau from '../pages/HocGoAnDau';
+import HocGoAmDau from '../pages/HocGoAmDau';
 import HocGoKyHieuDacBiet from '../pages/HocGoKyHieuDacBiet';
 import HocGoSo from '../pages/HocGoSo';
 import HocQuyTacXoa from '../pages/HocQuyTacXoa';

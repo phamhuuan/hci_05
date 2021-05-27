@@ -25,7 +25,7 @@ const Step1 = ({setStep}) => {
 						Người chơi có thể lựa chọn phạm vi chơi: Âm đầu, Âm chính, Âm cuối, .v.v
 					</div>
 					<div style={{display: 'flex', flexDirection: 'row-reverse', marginTop: -150}}>
-						<img onClick={() => setStep(1)} style={{width: 200, marginRight: 50}} src="https://s3-alpha-sig.figma.com/img/12b6/2792/d99ed4876924255ce46a0dc5abb0b5fd?Expires=1620604800&Signature=ICxT5ofNXzeKOuPDdJkFkyi6fT~VS4fFZn9cCrADI9LIpz6vaHs5qCGWBLJ3TlZHXNrxBhnSs4SnxOs~bhsyYEzPNr1CQcrpserD8PwQNzSsHostieaknXVGT8Yd9fAVQW3YdnrtW4WyL8mNPuIzZCPBmnbitxtKMBNrkZPIbkMIOwkRS6fQ9uECgE6geXCyV3lRdoTzzDISohHE7XL-xWA~zky5V4v46Cfw5Jij4L3-dhuS06U~Kl~Ksg6iC~L84ug1bFUJZ0KkS2x9UROYDyrvKUr4KaAE755eOgA~VDXg2wtF23NN6o7iW-zQBHDPAE282meVPrR9mOfiHTCl1g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Start" />
+						<img onClick={() => setStep(1)} style={{width: 200, marginRight: 50}} src="https://s3-alpha-sig.figma.com/img/12b6/2792/d99ed4876924255ce46a0dc5abb0b5fd?Expires=1623024000&Signature=fa~0DOK37WxV6~J3hdvLxot~BJ7T-whHPaxbYH-aOc79rvpijvAXxLKfBApY5LPhfrX6eGlUIjP~myc-FrFigCW8Yu5-xX5WMf7qYBRL4xqtcTjKrie0UjzpyNfwfZY2-K-UxEgeXHm-Oi5vTP7P3Afj095p5sf4F9avXaTQWAxvypRIKxhAKZXdKU4VTei5JW8aJEYN3166CmNkdnBTq9vq-LzSPFN-Kuc8i4aU3XM7Par01Penj0xMFQ7GEKeHVF7LZlv4W--X9hMZFUoBxd8U~YJDL-q5jFvvpYXmxrBbHKqwXdeS3vnHP8GwzGHflbNNOlqYj395DqapY4jR6Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="Start" />
 					</div>
 				</div>
 			</div>

@@ -23,10 +23,6 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 		});
 	}, [currentData]);
 
-	// useEffect(() => {
-	// 	console.log(state.keys);
-	// }, [state.keys]);
-
 	const handleKeyDown = (event) => {
 		const {key} = event;
 		if (listKeys.includes(key)) {
@@ -39,7 +35,8 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 	const handleKeyUp = () => {
 		if (state.numberOfKeys === 1) {
 			if (state.shouldSearch) {
-				if (state.keys.map(key => KeyCode.convertKey(key)).sort().join('') === state.text.tk.toLowerCase().split('').sort().join('')) {
+				console.log(state.keys.map(key => KeyCode.convertKey(key)).sort().join('').split('-').join(''), state.text.tk.toLowerCase().split('').sort().join('').split('-').join(''));
+				if (state.keys.map(key => KeyCode.convertKey(key)).sort().join('').split('-').join('') === state.text.tk.toLowerCase().split('').sort().join('').split('-').join('')) {
 					setState(state => ({
 						...state,
 						text: state.nextTexts[0],

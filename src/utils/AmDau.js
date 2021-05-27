@@ -7,56 +7,56 @@ export default class AmDau {
 	static convertKey(keys, nextString) {
 		keys = keys.map(key => KeyCode.convertKey(key)).sort().join('');
 		switch (keys) {
-			case 'kr':
+			case 'k-r-':
 				if (stringArr.includes(nextString[0])) return 'ngh';
 				return 'ng';
-			case 'pt':
+			case 'p-t-':
 				return 'đ';
-			case 'hk':
+			case 'h-k-':
 				return 'kh';
-			case 'kp':
+			case 'k-p-':
 				if (stringArr.includes(nextString[0])) return 'gh';
 				return 'g';
-			case 'p':
+			case 'p-':
 				return 'b';
-			case 'hs':
+			case 'h-s-':
 				return 'gi';
-			case 'k':
+			case 'k-':
 				if (stringArr.includes(nextString[0])) return 'k';
 				return 'c';
-			case 'ps':
+			case 'p-s-':
 				return 'd';
-			case 'ks':
+			case 'k-s-':
 				return 'ch';
-			case 'h':
+			case 'h-':
 				return 'h';
-			case 'rs':
+			case 'r-s-':
 				return 'l';
-			case 'hr':
+			case 'h-r-':
 				return 'm';
-			case 'pr':
+			case 'p-r-':
 				return 'n';
-			case 'hps':
+			case 'h-p-s-':
 				return 'p';
-			case 'kst':
+			case 'k-s-t-':
 				return 'q';
-			case 'r':
+			case 'r-':
 				return 'r';
-			case 's':
+			case 's-':
 				return 's';
-			case 't':
+			case 't-':
 				return 't';
-			case 'ht':
+			case 'h-t-':
 				return 'th';
-			case 'prs':
+			case 'p-r-s-':
 				return 'v';
-			case 'hp':
+			case 'h-p-':
 				return 'ph';
-			case 'st':
+			case 's-t-':
 				return 'x';
-			case 'kt':
+			case 'k-t-':
 				return 'nh';
-			case 'rt':
+			case 'r-t-':
 				return 'tr';
 			default:
 				return '';
