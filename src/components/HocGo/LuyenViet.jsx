@@ -10,17 +10,19 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 		keys: [],
 		shouldSearch: true,
 		numberOfKeys: 0,
+		isSuggest: false,
 	});
 
 	useEffect(() => {
-		setState({
+		setState(currentState => ({
+			...currentState,
 			text: currentData[Math.round(Math.random() * (currentData.length - 1))],
 			nextTexts: [currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))]],
 			prevTexts: [],
 			keys: [],
 			shouldSearch: true,
 			numberOfKeys: 0,
-		});
+		}));
 	}, [currentData]);
 
 	const handleKeyDown = (event) => {
@@ -35,7 +37,6 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 	const handleKeyUp = () => {
 		if (state.numberOfKeys === 1) {
 			if (state.shouldSearch) {
-				console.log(state.keys.map(key => KeyCode.convertKey(key)).sort().join('').split('-').join(''), state.text.tk.toLowerCase().split('').sort().join('').split('-').join(''));
 				if (state.keys.map(key => KeyCode.convertKey(key)).sort().join('').split('-').join('') === state.text.tk.toLowerCase().split('').sort().join('').split('-').join('')) {
 					setState(state => ({
 						...state,
@@ -66,6 +67,7 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 	return (
 		<div style={{flex: 6, marginLeft: 20, marginRight: 20, marginTop: 40}}>
 			<b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b>
+			<div style={{display: 'flex', flexDirection: 'row-reverse'}}><div onClick={() => setState(currentState => ({...currentState, isSuggest: !currentState.isSuggest}))} className="button2">{state.isSuggest ? 'Ẩn gợi ý' : 'Hiện gợi ý'}</div></div>
 			<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, height: 100, backgroundColor: 'white', borderRadius: 20}}>
 				<div style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center', userSelect: 'none'}}>
 					<div style={{display: 'flex', flex: 1, justifyContent: 'space-around', marginTop: 18}}>
@@ -81,7 +83,7 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 				<input value={''} style={{height: 30, width: 400}} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
 			</div>
 			<div style={{marginTop: 30}}>
-				<KeyBoard keys={state.keys} />
+				<KeyBoard keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
 			</div>
 		</div>
 	)
