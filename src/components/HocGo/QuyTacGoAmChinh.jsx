@@ -5,7 +5,7 @@ const QuyTacGoAmChinh = () => {
 		<div style={{flex: 6, height: window.innerHeight - 120, overflowX: 'auto', backgroundColor: 'white', marginLeft: 10, marginRight: 10, borderRadius: 10, boxShadow: 5}}>
 			<div style={{fontFamily: 'Monda-Bold', marginLeft: 50, fontSize: 20, marginTop: 40}}>Bàn phím tốc ký</div>
 			<div style={{display: 'flex', justifyContent: 'center', marginTop: 30}}>
-				<img style={{height: 200}} src={"https://imgur.com/iJ1cjx4"} alt={"BanPhimTocKy"} />
+				<img style={{height: 200}} src={"https://i.imgur.com/iJ1cjx4.png"} alt={"BanPhimTocKy"} />
 			</div>
 			<div style={{fontFamily: 'Monda-Bold', marginLeft: 50, fontSize: 20, marginTop: 30}}>Quy tắc gõ âm chính</div>
 			<div style={{marginLeft: 60, marginRight: 60}}>
