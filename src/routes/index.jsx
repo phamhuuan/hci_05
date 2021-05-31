@@ -20,8 +20,8 @@ import LuyenQuyTacXoa from '../pages/LuyenQuyTacXoa';
 import Rules from '../pages/Rules';
 import StartScreen from '../pages/StartScreen';
 import TimBucTranhBiAn from '../pages/TimBucTranhBiAn';
-import HangMan from '../pages/HangManScreen';
 import HangManScreen from '../pages/HangManScreen';
+import SoanThaoVanBan from '../pages/SoanThaoVanBan';
 
 const MainRoute = () => {
 	return (
@@ -86,6 +86,9 @@ const MainRoute = () => {
 				</Route>
 				<Route exact path={PathString.GameHangMan}>
 					<HangManScreen />
+				</Route>
+				<Route exact path={PathString.SoanThaoVanBan}>
+					<SoanThaoVanBan />
 				</Route>
 				<Route path='*'>
 					<Redirect to={PathString.Home} />

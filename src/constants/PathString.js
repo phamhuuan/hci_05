@@ -24,4 +24,5 @@ export default class PathString {
 	static Games = '/games';
 	static GameTimBucTranhBiAn = '/games/tim-buc-tranh-bi-an';
 	static GameHangMan = '/games/hangman';
+	static SoanThaoVanBan = '/soan-thao-van-ban';
 }
