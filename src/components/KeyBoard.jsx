@@ -1,6 +1,6 @@
 import React from 'react';
 
-const KeyBoard = ({keys}) => {
+const KeyBoard = ({keys, listKeys = [], suggestKeys = []}) => {
 	console.log(keys);
 	return (
 		<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -52,37 +52,37 @@ const KeyBoard = ({keys}) => {
 				<div className="key5">
 					Tab
 				</div>
-				<div className="key3" style={keys.includes('q') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('q') ? {backgroundColor: 'red'} : listKeys.includes('q') && suggestKeys.includes('S') ? {backgroundColor: 'orange'} : {}}>
 					S<br />Q
 				</div>
-				<div className="key3" style={keys.includes('w') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('w') ? {backgroundColor: 'red'} : listKeys.includes('w') && suggestKeys.includes('K') ? {backgroundColor: 'orange'} : {}}>
 					K<br />W
 				</div>
-				<div className="key3" style={keys.includes('e') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('e') ? {backgroundColor: 'red'} : listKeys.includes('e') && suggestKeys.includes('R') ? {backgroundColor: 'orange'} : {}}>
 					R<br />E
 				</div>
-				<div className="key3" style={keys.includes('r') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('r') ? {backgroundColor: 'red'} : listKeys.includes('r') && suggestKeys.includes('N') ? {backgroundColor: 'orange'} : {}}>
 					N<br />R
 				</div>
-				<div className="key3" style={keys.includes('t') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('t') ? {backgroundColor: 'red'} : listKeys.includes('t') && suggestKeys.includes('H') ? {backgroundColor: 'orange'} : {}}>
 					H<br />T
 				</div>
 				<div className="key1">
 					Y
 				</div>
-				<div className="key3" style={keys.includes('u') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('u') ? {backgroundColor: 'red'} : listKeys.includes('u') && suggestKeys.includes('*') ? {backgroundColor: 'orange'} : {}}>
 					*<br />U
 				</div>
-				<div className="key3" style={keys.includes('i') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('i') ? {backgroundColor: 'red'} : listKeys.includes('i') && suggestKeys.includes('W') ? {backgroundColor: 'orange'} : {}}>
 					W<br />I
 				</div>
-				<div className="key3" style={keys.includes('o') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('o') ? {backgroundColor: 'red'} : listKeys.includes('o') && suggestKeys.includes('J') ? {backgroundColor: 'orange'} : {}}>
 					J<br />O
 				</div>
-				<div className="key3" style={keys.includes('p') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('p') ? {backgroundColor: 'red'} : listKeys.includes('p') && suggestKeys.includes('N') ? {backgroundColor: 'orange'} : {}}>
 					N<br />P
 				</div>
-				<div className="key3" style={keys.includes('[') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('[') ? {backgroundColor: 'red'} : listKeys.includes('[') && suggestKeys.includes('T') ? {backgroundColor: 'orange'} : {}}>
 					T<br />[
 				</div>
 				<div className="key1">
@@ -96,37 +96,37 @@ const KeyBoard = ({keys}) => {
 				<div className="key7">
 					Caps Lock
 				</div>
-				<div className="key3" style={keys.includes('a') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('a') ? {backgroundColor: 'red'} : listKeys.includes('a') && suggestKeys.includes('T') ? {backgroundColor: 'orange'} : {}}>
 					T<br />A
 				</div>
-				<div className="key3" style={keys.includes('s') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('s') ? {backgroundColor: 'red'} : listKeys.includes('s') && suggestKeys.includes('P') ? {backgroundColor: 'orange'} : {}}>
 					P<br />S
 				</div>
-				<div className="key3" style={keys.includes('d') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('d') ? {backgroundColor: 'red'} : listKeys.includes('d') && suggestKeys.includes('H') ? {backgroundColor: 'orange'} : {}}>
 					H<br />D
 				</div>
-				<div className="key3" style={keys.includes('f') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('f') ? {backgroundColor: 'red'} : listKeys.includes('f') && suggestKeys.includes('N') ? {backgroundColor: 'orange'} : {}}>
 					N<br />F
 				</div>
-				<div className="key3" style={keys.includes('g') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('g') ? {backgroundColor: 'red'} : listKeys.includes('g') && suggestKeys.includes('S') ? {backgroundColor: 'orange'} : {}}>
 					S<br />G
 				</div>
 				<div className="key1">
 					H
 				</div>
-				<div className="key3" style={keys.includes('j') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('j') ? {backgroundColor: 'red'} : listKeys.includes('j') && suggestKeys.includes('I') ? {backgroundColor: 'orange'} : {}}>
 					I<br />J
 				</div>
-				<div className="key3" style={keys.includes('k') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('k') ? {backgroundColor: 'red'} : listKeys.includes('k') && suggestKeys.includes('Y') ? {backgroundColor: 'orange'} : {}}>
 					Y<br />K
 				</div>
-				<div className="key3" style={keys.includes('l') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('l') ? {backgroundColor: 'red'} : listKeys.includes('l') && suggestKeys.includes('J') ? {backgroundColor: 'orange'} : {}}>
 					J<br />L
 				</div>
-				<div className="key3" style={keys.includes(';') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes(';') ? {backgroundColor: 'red'} : listKeys.includes(';') && suggestKeys.includes('G') ? {backgroundColor: 'orange'} : {}}>
 					G<br />;
 				</div>
-				<div className="key3" style={keys.includes("'") ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes("'") ? {backgroundColor: 'red'} : listKeys.includes("'") && suggestKeys.includes('K') ? {backgroundColor: 'orange'} : {}}>
 					K<br />'
 				</div>
 				<div className="key8">
@@ -143,19 +143,19 @@ const KeyBoard = ({keys}) => {
 				<div className="key1">
 					X
 				</div>
-				<div className="key3" style={keys.includes('c') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('c') ? {backgroundColor: 'red'} : listKeys.includes('c') && suggestKeys.includes('U') ? {backgroundColor: 'orange'} : {}}>
 					U<br />C
 				</div>
-				<div className="key3" style={keys.includes('v') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('v') ? {backgroundColor: 'red'} : listKeys.includes('v') && suggestKeys.includes('O') ? {backgroundColor: 'orange'} : {}}>
 					O<br />V
 				</div>
 				<div className="key1">
 					B
 				</div>
-				<div className="key3" style={keys.includes('n') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('n') ? {backgroundColor: 'red'} : listKeys.includes('n') && suggestKeys.includes('E') ? {backgroundColor: 'orange'} : {}}>
 					E<br />N
 				</div>
-				<div className="key3" style={keys.includes('m') ? {backgroundColor: 'red'} : {}}>
+				<div className="key3" style={keys.includes('m') ? {backgroundColor: 'red'} : listKeys.includes('m') && suggestKeys.includes('A') ? {backgroundColor: 'orange'} : {}}>
 					A<br />M
 				</div>
 				<div className="key1">
