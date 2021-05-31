@@ -25,7 +25,7 @@ const Step1 = ({setStep}) => {
 						Người chơi có thể lựa chọn phạm vi chơi: Âm đầu, Âm chính, Âm cuối, .v.v
 					</div>
 					<div style={{display: 'flex', flexDirection: 'row-reverse', marginTop: -150}}>
-						<img onClick={() => setStep(1)} style={{width: 200, marginRight: 50}} src="https://imgur.com/yFKoNfe" alt="Start" />
+						<img onClick={() => setStep(1)} style={{width: 200, marginRight: 50}} src="https://i.imgur.com/yFKoNfe.png" alt="Start" />
 					</div>
 				</div>
 			</div>
