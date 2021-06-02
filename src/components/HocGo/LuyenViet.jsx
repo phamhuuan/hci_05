@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import KeyCode from '../../utils/KeyCode';
 import KeyBoard from '../KeyBoard';
+import KeyBoard2 from '../KeyBoard2';
 
 const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 	const [state, setState] = useState({
@@ -70,25 +71,30 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 	};
 
 	return (
-		<div style={{flex: 6, marginLeft: 20, marginRight: 20, marginTop: 40}}>
-			<b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b>
-			<div style={{display: 'flex', flexDirection: 'row-reverse'}}><div onClick={() => setState(currentState => ({...currentState, isSuggest: !currentState.isSuggest}))} className="button2">{state.isSuggest ? 'Ẩn gợi ý' : 'Hiện gợi ý'}</div></div>
-			<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, height: 100, backgroundColor: 'white', borderRadius: 20}}>
+		<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 6, marginLeft: 20, marginRight: 20, marginTop: 20}}>
+			<div style={{width: '100%'}}><b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b></div>
+			<div style={{width: '100%'}}><div style={{display: 'flex', flexDirection: 'row-reverse'}}><div onClick={() => setState(currentState => ({...currentState, isSuggest: !currentState.isSuggest}))} className="button2">{state.isSuggest ? 'Ẩn gợi ý' : 'Hiện gợi ý'}</div></div></div>
+			<div style={{display: 'flex', flexDirection: 'column', marginTop: 10, width: 600, height: 80, backgroundColor: 'white', borderRadius: 20}}>
 				<div style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center', userSelect: 'none'}}>
 					<div style={{display: 'flex', flex: 1, justifyContent: 'space-around', marginTop: 18}}>
 						{state.prevTexts.map(key => <p style={{width: 40, color: '#999', textAlign: 'center'}}>{key.vn}</p>)}
 					</div>
-					<p style={{fontFamily: 'Monda-Bold', fontSize: 40}}>{state.text.vn}</p>
+					<p style={{fontFamily: 'Monda-Bold', fontSize: 30}}>{state.text.vn}</p>
 					<div style={{display: 'flex', flex: 1, justifyContent: 'space-around', marginTop: 18}}>
 						{state.nextTexts.map(key => <p style={{width: 40, color: '#999', textAlign: 'center'}}>{key.vn}</p>)}
 					</div>
 				</div>
 			</div>
-			<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, alignItems: 'center'}}>
+			<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 10, alignItems: 'center'}}>
 				<input ref={inputRef} value={''} style={{height: 30, width: 400}} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
 			</div>
-			<div style={{marginTop: 30}}>
-				<KeyBoard keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
+			<div style={{marginTop: 10, width: 1000}}>
+				<div className="zerodot8" style={{display: 'flex'}}>
+					<KeyBoard keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
+					<div style={{marginLeft: 20}}>
+						<KeyBoard2 keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
+					</div>
+				</div>
 			</div>
 		</div>
 	)

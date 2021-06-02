@@ -42,7 +42,7 @@ const HocGoAmCuoi = () => {
 				<Header selected={state.selected} setSelected={setSelected} title={'Học gõ âm đầu'} lesson={state.lesson} setLesson={setLesson} />
 				<div style={{display: 'flex', flexDirection: 'row'}}>
 					{state.lesson === 0 ? <QuyTacGoAmCuoi /> : state.selected === 0 ? <CardView title={'Học gõ âm đầu'} lesson={state.lesson} currentData={state.data[state.lesson - 1]} /> : <LuyenViet title={'Học gõ âm đầu'} lesson={state.lesson} currentData={state.data[state.lesson - 1]} listKeys={AmCuoi.amDauN} />}
-					<Lessons data={state.data} setLesson={setLesson} />
+					{state.lesson === 0 && <Lessons data={state.data} setLesson={setLesson} />}
 				</div>
 			</div>
 		</div>

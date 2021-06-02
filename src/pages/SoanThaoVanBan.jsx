@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import KeyBoard from "../components/KeyBoard";
+import KeyBoard2 from "../components/KeyBoard2";
 import MainSlideBarContainer from "../components/MainSlideBarContainer";
 import NavBar from "../components/NavBar";
 
@@ -54,8 +55,15 @@ const SoanThaoVanBan = () => {
                         </div>
                     </div>
                 </div>
-                {showKeyBoard && <div className="mt-5">
-                    <KeyBoard keys={[]} />
+                {showKeyBoard && <div style={{display: 'flex', justifyContent: 'center'}}>
+									<div style={{marginTop: 10, width: 1000}}>
+										<div className="zerodot8" style={{display: 'flex'}}>
+											<KeyBoard keys={[]}/>
+											<div style={{marginLeft: 20}}>
+												<KeyBoard2 keys={[]}/>
+											</div>
+										</div>
+									</div>
                 </div>}
             </div>
         </div>

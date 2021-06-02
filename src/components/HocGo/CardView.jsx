@@ -15,7 +15,7 @@ const CardView = ({title, lesson, currentData}) => {
 	};
 
 	return (
-		<div style={{flex: 6, marginLeft: 20, marginRight: 20, marginTop: 40}}>
+		<div style={{flex: 6, marginLeft: 200, marginRight: 200, marginTop: 40}}>
 			<b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b>
 			<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, height: 300, backgroundColor: 'white', borderTopLeftRadius: 20, borderTopRightRadius: 20}}>
 				<div style={{display: 'flex',flex: 1, flexDirection: 'row', alignItems: 'center'}}>
