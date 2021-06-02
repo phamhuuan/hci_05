@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Step1 from '../components/TimBucTranhBiMat/Step1';
 import Step2 from '../components/TimBucTranhBiMat/Step2';
 import Step3 from '../components/TimBucTranhBiMat/Step3';
+import '../css/TimBucTranhBiAn.css';
 
 const TimBucTranhBiAn = () => {
 	const [state, setState] = useState({

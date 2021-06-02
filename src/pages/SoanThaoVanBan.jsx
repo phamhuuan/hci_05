@@ -5,7 +5,7 @@ import MainSlideBarContainer from "../components/MainSlideBarContainer";
 import NavBar from "../components/NavBar";
 
 const SoanThaoVanBan = () => {
-	const [showKeyBoard, setShowKeyBoard] = useState(false);
+    const [showKeyBoard, setShowKeyBoard] = useState(false);
 
     return (
         <div>
@@ -20,12 +20,12 @@ const SoanThaoVanBan = () => {
                     </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                    <div style={{ display: "flex", flexDirection: "column", width: "70%" }}>
+                    <div style={{ display: "flex", flexDirection: "column", width: "70%", minWidth:"290px" }}>
                         <h3 className="my-4">Nhập văn bản</h3>
                         <textarea type="text-area" placeholder="Văn bản tốc ký..." style={{ height: "250px", border: "1px solid #000", borderRadius: "10px", outlineColor: "#007bff" }} />
                         <button className="btn btn-dark ml-auto mt-2 text-center" style={{ minWidth: "120px" }}>Clear</button>
                     </div>
-                    <div style={{ width: "20%" }}>
+                    <div style={{ width: "20%", minWidth:"290px" }}>
                         <h3 className="my-4">Lịch sử văn bản tốc ký</h3>
                         <div style={{ border: "1px solid #000", borderRadius: "10px", height: "250px" }}>
                             <table className="text-center" style={{ width: "100%", lineHeight: "2" }}>
@@ -55,15 +55,15 @@ const SoanThaoVanBan = () => {
                         </div>
                     </div>
                 </div>
-                {showKeyBoard && <div style={{display: 'flex', justifyContent: 'center'}}>
-									<div style={{marginTop: 10, width: 1000}}>
-										<div className="zerodot8" style={{display: 'flex'}}>
-											<KeyBoard keys={[]}/>
-											<div style={{marginLeft: 20}}>
-												<KeyBoard2 keys={[]}/>
-											</div>
-										</div>
-									</div>
+                {showKeyBoard && <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ marginTop: 10, width: 1000 }}>
+                        <div className="zerodot8" style={{ display: 'flex' }}>
+                            <KeyBoard keys={[]} />
+                            <div style={{ marginLeft: 20 }}>
+                                <KeyBoard2 keys={[]} />
+                            </div>
+                        </div>
+                    </div>
                 </div>}
             </div>
         </div>
