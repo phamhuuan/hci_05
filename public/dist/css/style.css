@@ -18,6 +18,8 @@
 	margin-right: 10px;
 	border-bottom: 4px solid #FEECDC;
 	user-select: none;
+	cursor: -webkit-grab;
+	cursor: grab;
 	color: #FEECDC;
 	font-family: Monda-Bold;
 }
@@ -31,6 +33,8 @@
 	margin-right: 10px;
 	border-radius: 20px;
 	user-select: none;
+	cursor: -webkit-grab;
+	cursor: grab;
 	background-color: #FEECDC;
 	color: #343A40;
 	font-family: Monda-Bold;
@@ -48,6 +52,8 @@
 	border-radius: 15px;
 	background-color: white;
 	user-select: none;
+	cursor: -webkit-grab;
+	cursor: grab;
 	color: #2F80ED;
 	font-family: Monda-Regular;
 }
@@ -63,6 +69,8 @@
 	border-radius: 15px;
 	background-color: white;
 	user-select: none;
+	cursor: -webkit-grab;
+	cursor: grab;
 	color: black;
 	font-family: Monda-Regular;
 }
@@ -252,13 +260,6 @@
 	margin: 1px;
 	font-size: 12px;
 	user-select: none;
-}
-
-*{
-	-ms-overflow-style: none;
-}
-::-webkit-scrollbar {
-	display: none;
 }
 
 .navbar1 {

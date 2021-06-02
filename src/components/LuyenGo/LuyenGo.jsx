@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import KeyCode from '../../utils/KeyCode';
 import KeyBoard from '../KeyBoard';
 
@@ -13,6 +13,11 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 		true: 0,
 		false: 0,
 	});
+	const inputRef = useRef();
+
+	useEffect(() => {
+		inputRef.current?.focus();
+	}, []);
 
 	const [timeLeft, setTimeLeft] = useState(60);
 
@@ -115,7 +120,7 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 					</div>
 				</div>
 				<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, alignItems: 'center'}}>
-					<input value={''} style={{height: 30, width: 400}} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
+					<input ref={inputRef} value={''} style={{height: 30, width: 400}} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
 				</div>
 				<div style={{marginTop: 30}}>
 					<KeyBoard keys={state.keys} />

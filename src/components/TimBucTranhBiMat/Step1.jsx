@@ -4,7 +4,7 @@ const Step1 = ({setStep}) => {
 	return (
 		<div>
 			<div style={{display: 'flex', height: 50, backgroundColor: '#C4C4C4', alignItems: 'center', paddingLeft: 50}}>Trò chơi: Tìm Bức Tranh Bị Ẩn</div>
-			<div style={{display: 'flex', flexDirection: 'row'}}>
+			<div style={{display: 'flex', flexDirection: 'row', flex: 1, justifySelf: 'center'}}>
 				<div style={{display: 'flex', flex: 1, flexDirection: 'column-reverse'}}>
 					<img className="flip" src="https://i.imgur.com/yjRBm24.png" alt="CuteCat" style={{height: 256, width: 256}} />
 				</div>

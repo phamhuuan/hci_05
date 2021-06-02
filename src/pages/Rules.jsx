@@ -43,7 +43,7 @@ const Rules = () => {
 						</div>
 					</div>
 					<div style={{display: 'flex', flexDirection: 'row', marginTop: 20}}>
-						Tìm kiếm: <input value={state.filterText} onChange={setFilterText} style={{marginLeft: 20}} />
+						Tìm kiếm: <input value={state.filterText} onChange={setFilterText} style={{marginLeft: 20, borderWidth: 0.5, borderRadius: 10, borderColor: 'white'}} />
 					</div>
 					<div style={{display: 'flex', justifyContent: 'center', height: window.innerHeight * 0.6, overflowX: 'auto', marginTop: 20}}>
 						<table class="table table-hover text-nowrap">

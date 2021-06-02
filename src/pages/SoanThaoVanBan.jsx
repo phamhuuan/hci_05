@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import KeyBoard from "../components/KeyBoard";
 import MainSlideBarContainer from "../components/MainSlideBarContainer";
 import NavBar from "../components/NavBar";
 
 const SoanThaoVanBan = () => {
+	const [showKeyBoard, setShowKeyBoard] = useState(false);
 
     return (
         <div>
@@ -13,7 +14,7 @@ const SoanThaoVanBan = () => {
                 <div style={{ display: 'flex', height: 50, backgroundColor: '#C4C4C4', alignItems: 'center', paddingLeft: 50, fontWeight: '600', justifyContent: "space-between" }}>
                     <div>Soạn thảo văn bản</div>
                     <div className="custom-control custom-switch pr-5">
-                        <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                        <input type="checkbox" className="custom-control-input" id="customSwitch1" onChange={event => setShowKeyBoard(event.target.checked)} checked={showKeyBoard} />
                         <label className="custom-control-label" htmlFor="customSwitch1">Hiển thị bàn phím</label>
                     </div>
                 </div>
@@ -37,25 +38,25 @@ const SoanThaoVanBan = () => {
                                         <td>Vừa xong</td>
                                     </tr>
                                     <tr>
-                                        <td>Văn bản 1</td>
+                                        <td>Văn bản 2</td>
                                         <td>Vừa xong</td>
                                     </tr>
                                     <tr>
-                                        <td>Văn bản 1</td>
-                                        <td>Vừa xong</td>
+                                        <td>Văn bản 3</td>
+                                        <td>2 phút trước</td>
                                     </tr>
                                     <tr>
-                                        <td>Văn bản 1</td>
-                                        <td>Vừa xong</td>
+                                        <td>Văn bản 4</td>
+                                        <td>5 phút trước</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div className="mt-5">
+                {showKeyBoard && <div className="mt-5">
                     <KeyBoard keys={[]} />
-                </div>
+                </div>}
             </div>
         </div>
     );
