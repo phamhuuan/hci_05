@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Instruction from '../components/HangMan/Instruction';
 import PlayScreen from '../components/HangMan/PlayScreen';
+import ScoreBoard from '../components/HangMan/ScoreBoard';
 import MainSlideBarContainer from '../components/MainSlideBarContainer';
 import NavBar from '../components/NavBar';
 
