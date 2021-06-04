@@ -12,7 +12,7 @@ const Lessons = ({data, setLesson}) => {
 							<p>Âm {lesson.map(item => item.vn).join(', ')}</p>
 							<div style={{display: 'flex', flexDirection: 'row'}}>
 								<div style={{flex: 1}} />
-								<div onClick={() => setLesson(0, index + 1)} className="button3">Thẻ ghi nhớ</div>
+								<div onClick={() => setLesson(0, index + 1)} className="button4">Thẻ ghi nhớ</div>
 								<div onClick={() => setLesson(1, index + 1)} className="button4">Luyện viết</div>
 								<div style={{flex: 1}} />
 							</div>
@@ -33,7 +33,7 @@ const Lessons = ({data, setLesson}) => {
 							<p>Âm {lesson.map(item => item.vn).join(', ')}</p>
 							<div style={{display: 'flex', flexDirection: 'row'}}>
 								<div style={{flex: 1}} />
-								<div onClick={() => setLesson(0, index + 1)} className="button3">Thẻ ghi nhớ</div>
+								<div onClick={() => setLesson(0, index + 1)} className="button4">Thẻ ghi nhớ</div>
 								<div onClick={() => setLesson(1, index + 1)} className="button4">Luyện viết</div>
 								<div style={{flex: 1}} />
 							</div>

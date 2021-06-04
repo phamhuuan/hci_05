@@ -188,7 +188,7 @@ const Home = () => {
                     					<div className="product-info">
                       						<a href="javascript:void(0)" className="product-title">Nguyễn Đức Nam
                         					<span className=" badge badge-info float-right">300 WPM</span></a>
-											<span class="product-description">
+											<span className="product-description">
 											⭐️⭐️⭐️⭐️⭐️
                       						</span>
                     					</div>
@@ -201,7 +201,7 @@ const Home = () => {
                     					<div className="product-info">
 											<a href="javascript:void(0)" className="product-title">Phạm Hữu An
 												<span className=" badge badge-info float-right">299 WPM</span></a>
-												<span class="product-description">
+												<span className="product-description">
 											⭐️⭐️⭐️⭐️⭐️
                       						</span>
                     					</div>
@@ -217,7 +217,7 @@ const Home = () => {
 											150 WPM
 										</span>
 										</a>
-										<span class="product-description">
+										<span className="product-description">
 											⭐️⭐️⭐️⭐️
                       					</span>
 										</div>
@@ -229,7 +229,7 @@ const Home = () => {
 										</div>
 										<div className="product-info">
 											<a href="javascript:void(0)" className="product-title">Đỗ Đức Thuận<span className="badge badge-info float-right">100 WPM</span></a>
-											<span class="product-description">
+											<span className="product-description">
 											⭐️⭐️⭐️
                       						</span>
 										</div>
