@@ -12,15 +12,20 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 		numberOfKeys: 0,
 		true: 0,
 		false: 0,
+		isOpen:false,
 	});
 	const inputRef = useRef();
-
 	useEffect(() => {
 		inputRef.current?.focus();
 	}, []);
 
 	const [timeLeft, setTimeLeft] = useState(60);
-
+	const onOpen = () => {
+		this.setState({isOpen: true});
+	}
+	const onClose = () => {
+		this.setState({isOpen: false});
+	}
 	useEffect(() => {
 		const interval = setInterval(() => {
 			if (timeLeft > 0) {
@@ -82,9 +87,8 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 			setState(state => ({...state, numberOfKeys: state.numberOfKeys - 1}));
 		}
 	};
-
+    
 	const tryAgain = () => {
-		setTimeLeft(60);
 		setState({
 			text: currentData[Math.round(Math.random() * (currentData.length - 1))],
 			nextTexts: [currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))], currentData[Math.round(Math.random() * (currentData.length - 1))]],
@@ -108,7 +112,7 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 			<b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b>
 			{timeLeft !== 0 ? <>
 				<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, height: 100, backgroundColor: 'white', borderRadius: 20}}>
-				<div style={{display: 'flex', flexDirection: 'row-reverse'}}><div className="button2">{parseTime()}</div></div>
+				<div style={{display: 'flex', flexDirection: 'row-reverse'}}><div onClick={() => setState(currentState => ({...currentState, isOpen: !currentState.isOpen}) )} className="button2">{state.isOpen ? parseTime():'Hiện thời gian'}</div></div>
 					<div style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center', userSelect: 'none'}}>
 						<div style={{display: 'flex', flex: 1, justifyContent: 'space-around', marginTop: 18}}>
 							{state.prevTexts.map(key => <p style={{width: 40, color: '#999', textAlign: 'center'}}>{key.vn}</p>)}
