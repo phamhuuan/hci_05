@@ -12,7 +12,7 @@ const Lessons = ({data, setLesson}) => {
 							<p>Âm {lesson.map(item => item.vn).join(', ')}</p>
 							<div style={{display: 'flex', flexDirection: 'row'}}>
 								<div style={{flex: 1}} />
-								<div onClick={() => setLesson(0, index + 1)} className="button3">Luyện gõ</div>
+								<div onClick={() => setLesson(0, index + 1)} className="button4">Luyện gõ</div>
 								<div style={{flex: 1}} />
 							</div>
 							{index < 2 && <Tooltip title={'100%'}><div style={{height: 5, backgroundColor: 'gray', marginTop: 10, borderRadius: 5}} /></Tooltip>}
@@ -32,7 +32,7 @@ const Lessons = ({data, setLesson}) => {
 							<p>Âm {lesson.map(item => item.vn).join(', ')}</p>
 							<div style={{display: 'flex', flexDirection: 'row'}}>
 								<div style={{flex: 1}} />
-								<div onClick={() => setLesson(0, index + 1)} className="button3">Luyện gõ</div>
+								<div onClick={() => setLesson(0, index + 1)} className="button4">Luyện gõ</div>
 								<div style={{flex: 1}} />
 							</div>
 						</div>
