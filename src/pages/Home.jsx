@@ -49,7 +49,7 @@ const Home = () => {
 	};
 
 	return (
-		<div>
+		<div style={{overflowX:"hidden"}}>
 			<MainSlideBarContainer />
 			<NavBar />
 			<div className="content-wrapper">
@@ -63,7 +63,7 @@ const Home = () => {
 							</div>
 							<div className="card-body">
 								<div className="row">
-									<div className="col-md-8">
+									{/* <div className="col-md-8">
 										<p className="text-center">
 											<strong>31 May, 2021 - 06 Jun, 2021</strong>
 										</p>
@@ -103,8 +103,13 @@ const Home = () => {
 												<div className="progress-bar bg-warning" style={{ width: "0%" }}></div>
 											</div>
 										</div>
-									</div>
-								</div>
+									</div>*/}
+									
+										<div className="row text-center" style={{display: 'flex', flexDirection: 'row'}}>
+											<img style={{maxWidth: '100%'}} src={`${window.location.origin}/dist/img/chart.png`} alt="" />
+										</div>
+								
+								</div> 
 							</div>
 						</div>
 					</div>

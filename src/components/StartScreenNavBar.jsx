@@ -8,7 +8,7 @@ const StartScreenNavBar = ({setSelected}) => {
 		<nav className="navbar navbar-expand navbar-dark">
 			<ul className="navbar-nav">
 				<li className="nav-item d-none d-sm-inline-block">
-					<Link to={PathString.StartScreen} style={{fontFamily: 'Monda-Bold', fontSize: 36, color: Color.PrimaryWhite}} className="nav-link">
+					<Link to={PathString.StartScreen} style={{ fontWeight:'bold' ,fontFamily: 'Courier', fontSize: 36, color: Color.PrimaryWhite}} className="nav-link">
 						HCI05
 					</Link>
 				</li>
@@ -16,16 +16,16 @@ const StartScreenNavBar = ({setSelected}) => {
 
 			<ul className="navbar-nav ml-auto">
 				<li className="nav-item" onClick={() => setSelected(0)}>
-					<div className="button1">Giới thiệu</div>
+					<div className="button1" style={{fontWeight:'bold' ,fontSize:'18px' ,fontFamily: 'Courier'}}>Giới thiệu</div>
 				</li>
 				<li className="nav-item" onClick={() => setSelected(1)}>
-					<div className="button1">Về chúng tôi</div>
+					<div className="button1" style={{fontWeight:'bold' ,fontSize:'18px' ,fontFamily: 'Courier'}}>Về chúng tôi</div>
 				</li>
 				<li className="nav-item" onClick={() => setSelected(2)}>
-					<div className="button1">Đăng nhập</div>
+					<div className="button1" style={{fontWeight:'bold' ,fontSize:'18px' ,fontFamily: 'Courier'}}>Đăng nhập</div>
 				</li>
 				<li className="nav-item" onClick={() => setSelected(3)}>
-					<div className="button2">Đăng ký</div>
+					<div className="button2" style={{fontWeight:'bold' ,fontSize:'18px' ,fontFamily: 'Courier'}}>Đăng ký</div>
 				</li>
 			</ul>
 		</nav>
