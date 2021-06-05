@@ -11142,7 +11142,7 @@ a.text-dark:hover, a.text-dark:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #f4f6f9;
+  background-color: #fff;
   height: 100vh;
   width: 100%;
   transition: height 200ms linear;
@@ -12336,7 +12336,7 @@ body.sidebar-:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini) .ma
 }
 
 .content-wrapper {
-  background-color: #f4f6f9;
+  background-color: #fff;
 }
 
 .content-wrapper > .content {
@@ -35790,7 +35790,7 @@ body.iframe-mode-fullscreen {
   left: 0;
   width: 100%;
   display: none;
-  background-color: #f4f6f9;
+  background-color: #fff;
 }
 
 .content-wrapper.iframe-mode .tab-loading > div {
