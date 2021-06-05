@@ -54,7 +54,7 @@ const Home = () => {
 			<NavBar />
 			<div className="content-wrapper">
 				{/* <input value={state.value} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} /> */}
-				<div className="row" style={{height:"50px"}}></div>
+				<div className="row" style={{height:"50px", backgroundColor:"#f4f6f9"}}></div>
 				<div className="row">
 					<div className="col-md-12">
 						<div className="card">
