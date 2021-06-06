@@ -21,7 +21,7 @@ const MainSlideBarContainer = () => {
 				<div className="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div className="image">
 						<img
-							src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/148203412_1877504562396997_7948356194534226096_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=b0Syg3lo66kAX9TdjIh&_nc_ht=scontent.fhan2-2.fna&oh=e132b5787c0ffa76b012bd0c0dd928e3&oe=60BBE9DB"
+							src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/148203412_1877504562396997_7948356194534226096_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=3CgqXHrFfqoAX_jr31o&_nc_ht=scontent.fhan2-2.fna&oh=b7fdc0c38be728793324a101a3a3b90c&oe=60E376DB"
 							alt="UserImage"
 							className="img-circle elevation-2"
 						/>
@@ -31,6 +31,23 @@ const MainSlideBarContainer = () => {
 							Phạm Hữu An
 						</a>
 					</div>
+				</div>
+				<div className="user-panel pb-3">
+					<nav className="mt-2">
+						<ul
+							className="nav nav-pills nav-sidebar flex-column"
+							data-widget="treeview"
+							role="menu"
+							data-accordion="false"
+						>
+							<li className="nav-item">
+								<Link to={PathString.TienBo} className={'nav-link'}>
+									<i class="nav-icon far fa-chart-bar"></i>
+									<p>Tiến bộ của tôi</p>
+								</Link>
+							</li>
+						</ul>
+					</nav>
 				</div>
 
 				<nav className="mt-2">

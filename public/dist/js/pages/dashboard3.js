@@ -79,12 +79,17 @@ $(function () {
 
   var $visitorsChart = $('#visitors-chart')
   // eslint-disable-next-line no-unused-vars
+	var time = new Date().getTime();
+	var labels = [];
+	for (var i = 0; i < 7; i++) {
+		labels.push(`${new Date(time).getDate()}/${new Date(time + (86400000 * i)).getMonth()+1}`)
+	}
   var visitorsChart = new Chart($visitorsChart, {
     data: {
-      labels: ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
+      labels,
       datasets: [{
         type: 'line',
-        data: [100, 120, 170, 167, 180, 177, 160],
+        data: [1, 1.5, 3, 2, 0.5, 1.2, 2],
         backgroundColor: 'transparent',
         borderColor: '#007bff',
         pointBorderColor: '#007bff',
@@ -93,17 +98,18 @@ $(function () {
         // pointHoverBackgroundColor: '#007bff',
         // pointHoverBorderColor    : '#007bff'
       },
-      {
-        type: 'line',
-        data: [60, 80, 70, 67, 80, 77, 100],
-        backgroundColor: 'tansparent',
-        borderColor: '#ced4da',
-        pointBorderColor: '#ced4da',
-        pointBackgroundColor: '#ced4da',
-        fill: false
-        // pointHoverBackgroundColor: '#ced4da',
-        // pointHoverBorderColor    : '#ced4da'
-      }]
+      // {
+      //   type: 'line',
+      //   data: [60, 80, 70, 67, 80, 77, 100],
+      //   backgroundColor: 'tansparent',
+      //   borderColor: '#ced4da',
+      //   pointBorderColor: '#ced4da',
+      //   pointBackgroundColor: '#ced4da',
+      //   fill: false
+      //   // pointHoverBackgroundColor: '#ced4da',
+      //   // pointHoverBorderColor    : '#ced4da'
+      // }
+		]
     },
     options: {
       maintainAspectRatio: false,
@@ -129,7 +135,7 @@ $(function () {
           },
           ticks: $.extend({
             beginAtZero: true,
-            suggestedMax: 200
+            suggestedMax: 6
           }, ticksStyle)
         }],
         xAxes: [{

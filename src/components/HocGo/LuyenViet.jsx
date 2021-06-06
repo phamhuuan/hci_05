@@ -100,12 +100,12 @@ const LuyenViet = ({title, lesson, currentData, listKeys}) => {
 				
 			</div>
 			<div style={{display:"flex", justifyContent:"center"}}>
-					{state.isSuggest && state.text.tk === "TP" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/d.png`} alt="" />}
-					{state.isSuggest && state.text.tk === "P" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/b.png`} alt="" />}
-					{state.isSuggest && state.text.tk === "KR" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/ngh.png`} alt="" />}
-					{state.isSuggest && state.text.tk === "KP" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/gh.png`} alt="" />}
-					{state.isSuggest && state.text.tk === "KH" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/kh.png`} alt="" />}
-				</div>
+				{state.isSuggest && state.text.tk === "TP" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/d.png`} alt="" />}
+				{state.isSuggest && state.text.tk === "P" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/b.png`} alt="" />}
+				{state.isSuggest && state.text.tk === "KR" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/ngh.png`} alt="" />}
+				{state.isSuggest && state.text.tk === "KP" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/gh.png`} alt="" />}
+				{state.isSuggest && state.text.tk === "KH" && <img style={{maxWidth: '80%'}} src={`${window.location.origin}/dist/img/kh.png`} alt="" />}
+			</div>
 		</div>
 	)
 };

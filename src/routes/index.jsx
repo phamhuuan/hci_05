@@ -22,6 +22,7 @@ import StartScreen from '../pages/StartScreen';
 import TimBucTranhBiAn from '../pages/TimBucTranhBiAn';
 import HangManScreen from '../pages/HangManScreen';
 import SoanThaoVanBan from '../pages/SoanThaoVanBan';
+import TienBo from '../pages/TienBo';
 
 const MainRoute = () => {
 	return (
@@ -89,6 +90,9 @@ const MainRoute = () => {
 				</Route>
 				<Route exact path={PathString.SoanThaoVanBan}>
 					<SoanThaoVanBan />
+				</Route>
+				<Route exact path={PathString.TienBo}>
+					<TienBo />
 				</Route>
 				<Route path='*'>
 					<Redirect to={PathString.Home} />
