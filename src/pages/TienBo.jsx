@@ -89,10 +89,10 @@ const TienBo = () => {
             <tr>
               <th scope="col">Bài học</th>
               <th scope="col">Tổng số bài học</th>
-              <th scope="col">Attemps</th>
-              <th scope="col">Passed Attempts</th>
-              <th scope="col">Failed Attempts</th>
-              <th scope="col">Partial Attemps</th>
+              <th scope="col">Số lần học</th>
+              <th scope="col">Đạt</th>
+              <th scope="col">Không đạt</th>
+              <th scope="col">Chưa hoàn thành</th>
               <th scope="col">Thời lượng</th>
               <th scope="col">Stars</th>
               <th scope="col">Tổng điểm</th>
@@ -103,20 +103,61 @@ const TienBo = () => {
 	        </thead>
 					<tbody>
 	          <tr>
-	            <th scope="row">Học gõ âm đầu</th>
+	            <td>Học gõ âm đầu</td>
 	            <td>30</td>
 	            <td>40</td>
 	            <td>30</td>
 	            <td>10</td>
 	            <td>0</td>
-	            <td>5h 32m 14s</td>
-	            <td>1738<i style={{ color: "yellow" }} className="fas fa-star" /></td>
+	            <td>5h 32m</td>
+	            <td>173<i style={{ color: "yellow" }} className="fas fa-star" /></td>
 	            <td>417962</td>
 	            <td>60</td>
 	            <td>90%</td>
 	            <td>87%</td>
 	          </tr>
-	                
+	          <tr>
+	            <td>Học gõ âm chính</td>
+	            <td>30</td>
+	            <td>40</td>
+	            <td>35</td>
+	            <td>10</td>
+	            <td>0</td>
+	            <td>3h 32m</td>
+	            <td style={{display: 'inline-flex', alignItems: 'center'}}>173<i style={{ color: "yellow" }} className="fas fa-star" /></td>
+	            <td>417962</td>
+	            <td>60</td>
+	            <td>90%</td>
+	            <td>87%</td>
+	          </tr>
+						<tr>
+	            <td>Học gõ âm cuối</td>
+	            <td>40</td>
+	            <td>30</td>
+	            <td>10</td>
+	            <td>30</td>
+	            <td>0</td>
+	            <td>4h 12m</td>
+	            <td>173<i style={{ color: "yellow" }} className="fas fa-star" /></td>
+	            <td>417962</td>
+	            <td>60</td>
+	            <td>90%</td>
+	            <td>87%</td>
+	          </tr>
+						<tr>
+	            <td>Học gõ số</td>
+	            <td>20</td>
+	            <td>30</td>
+	            <td>10</td>
+	            <td>40</td>
+	            <td>0</td>
+	            <td>5h 32m</td>
+	            <td>173<i style={{ color: "yellow" }} className="fas fa-star" /></td>
+	            <td>417962</td>
+	            <td>60</td>
+	            <td>90%</td>
+	            <td>87%</td>
+	          </tr> 
 	        </tbody>
         </table>
 			</div>

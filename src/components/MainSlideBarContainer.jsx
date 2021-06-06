@@ -36,7 +36,6 @@ const MainSlideBarContainer = () => {
 					<nav className="mt-2">
 						<ul
 							className="nav nav-pills nav-sidebar flex-column"
-							data-widget="treeview"
 							role="menu"
 							data-accordion="false"
 						>
@@ -47,6 +46,10 @@ const MainSlideBarContainer = () => {
 								</Link>
 							</li>
 						</ul>
+						{/* <Link to={PathString.TienBo} className={'nav-link'}>
+							<i class="nav-icon far fa-chart-bar"></i>
+							<p>Tiến bộ của tôi</p>
+						</Link> */}
 					</nav>
 				</div>
 
