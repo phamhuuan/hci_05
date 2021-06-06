@@ -9,7 +9,7 @@ import { showNotification as show, checkWin } from './helpers/helpers';
 
 import './css/MainScreen.css';
 
-const words = ['application', 'programming', 'interface', 'wizard'];
+const words = ['ghen', 'thua', 'trung', 'quy'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function PlayScreen() {

@@ -17,7 +17,6 @@ const Home = () => {
 		numberOfKeys: 0,
 		value: '',
 	});
-
 	const handleKeyDown = (event) => {
 		const { key } = event;
 		if (AmDau.amDauN.includes(key)) {
