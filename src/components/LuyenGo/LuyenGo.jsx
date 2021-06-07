@@ -94,7 +94,7 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 			false: 0,
 		});
 	};
-
+	
 	const parseTime = useCallback(() => {
 		const minute = Math.floor(timeLeft / 60);
 		const second = timeLeft % 60;
