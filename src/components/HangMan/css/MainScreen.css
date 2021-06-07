@@ -75,7 +75,7 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 250px;
     right: 0;
     /* display: flex; */
     display: none;

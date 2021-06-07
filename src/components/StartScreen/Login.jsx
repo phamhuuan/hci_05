@@ -16,7 +16,7 @@ const Login = ({setSelected}) => {
 				</div>
 				<div className="col-lg-4" style={{display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center'}}>
 					<div className="card-body register-card-body">
-						<p className="login-box-msg" style={{fontFamily: 'Monda-Regular', fontWeight: 700, fontSize: 36, color: 'black'}}>Đăng nhập</p>
+						<p className="login-box-msg" style={{fontFamily: 'Monda-Regular', fontWeight: 700, fontSize: 36, color: 'black', border:"none"}}>Đăng nhập</p>
 						<form>
 							<div className="input-group mb-3">
 								<input type="email" className="form-control" placeholder="Email" />

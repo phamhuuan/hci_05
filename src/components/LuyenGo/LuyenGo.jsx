@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import KeyCode from '../../utils/KeyCode';
 import KeyBoard from '../KeyBoard';
+import KeyBoard2 from '../KeyBoard2';
 
 const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 	const [state, setState] = useState({
@@ -12,7 +13,7 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 		numberOfKeys: 0,
 		true: 0,
 		false: 0,
-		
+		isCountingDown: false,
 	});
 	const inputRef = useRef();
 	useEffect(() => {
@@ -20,14 +21,21 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 	}, []);
 	const [timeLeft, setTimeLeft] = useState(60);
 	useEffect(() => {
-		const interval = setInterval(() => {
-			if (timeLeft > 0) {
-				setTimeLeft(timeLeft - 1);
-			}
-		}, 1000);
-		return () => clearInterval(interval);
+		if (state.isCountingDown) {
+			const interval = setInterval(() => {
+				if (timeLeft > 0) {
+					setTimeLeft(timeLeft - 1);
+				}
+			}, 1000);
+			return () => clearInterval(interval);
+		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [timeLeft]);
+	}, [state.isCountingDown, timeLeft]);
+
+	const onStop = () => {
+		setState(currentState => ({...currentState, isCountingDown: false}));
+		setTimeLeft(0);
+	};
 
 	useEffect(() => {
 		setState(currentState => ({
@@ -94,7 +102,7 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 			false: 0,
 		});
 	};
-
+	
 	const parseTime = useCallback(() => {
 		const minute = Math.floor(timeLeft / 60);
 		const second = timeLeft % 60;
@@ -106,7 +114,10 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 			<b style={{fontFamily: 'Monda-Bold'}}>{title} - Bài {lesson}</b>
 			{timeLeft !== 0 ? <>
 				<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, height: 100, backgroundColor: 'white', borderRadius: 20}}>
-				<div style={{display: 'flex', flexDirection: 'row-reverse'}}><div onClick={() => setState(currentState => ({...currentState, isOpen: !currentState.isOpen}) )} className="button2">{state.isOpen ? parseTime():'Hiện thời gian'}</div></div>
+					<div style={{display: 'flex', flexDirection: 'row-reverse'}}>
+						{state.isCountingDown ? <div onClick={onStop} className="button2">{'Kết thúc'}</div> : <div onClick={() => setState(currentState => ({...currentState, isCountingDown: true}))} className="button2" style={{width: 150}}>{'Bắt đầu tính giờ'}</div>}
+						{state.isCountingDown && <div className="button2">{parseTime()}</div>}
+					</div>
 					<div style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center', userSelect: 'none'}}>
 						<div style={{display: 'flex', flex: 1, justifyContent: 'space-around', marginTop: 18}}>
 							{state.prevTexts.map(key => <p style={{width: 40, color: '#999', textAlign: 'center'}}>{key.vn}</p>)}
@@ -120,12 +131,18 @@ const LuyenGo = ({title, lesson, currentData, listKeys}) => {
 				<div style={{display: 'flex', flexDirection: 'column', marginLeft: 60, marginRight: 60, marginTop: 30, alignItems: 'center'}}>
 					<input ref={inputRef} value={''} style={{height: 30, width: 400}} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
 				</div>
-				<div style={{marginTop: 30}}>
-					<KeyBoard keys={state.keys} />
+				<div style={{marginTop: 10, width: 1000}}>
+				<div className="zerodot8" style={{display: 'flex'}}>
+					<KeyBoard keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
+					<div style={{marginLeft: 20}}>
+						<KeyBoard2 keys={state.keys} listKeys={listKeys} suggestKeys={state.isSuggest ? state.text.tk.split('').sort().join('').split('-').join('').split('') : []} />
+					</div>
 				</div>
+				
+			</div>
 			</> : <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 200}}>
-				<div style={{fontSize: 20}}>Số từ đúng: {state.true}</div>
-				<div style={{fontSize: 20}}>Số từ sai: {state.false}</div>
+				<div style={{fontSize: 20}}>Gõ đúng: {state.true}/{state.true + state.false}</div>
+				<div>{state.true/(state.true + state.false) > 0.8 ? '⭐️⭐️⭐️⭐️⭐️' : state.true/(state.true + state.false) > 0.6 ? '⭐️⭐️⭐️⭐️' : state.true/(state.true + state.false) > 0.4 ? '⭐️⭐️⭐️' : state.true/(state.true + state.false) > 0.2 ? '⭐️⭐️' : '⭐️'}</div>
 				<div className="button2" style={{marginTop: 50}} onClick={tryAgain}>Bắt đầu lại</div>
 			</div>}
 		</div>

@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 
 const SoanThaoVanBan = () => {
     const [showKeyBoard, setShowKeyBoard] = useState(false);
+    const [text, setText] = useState("");
 
     return (
         <div>
@@ -22,8 +23,8 @@ const SoanThaoVanBan = () => {
                 <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
                     <div style={{ display: "flex", flexDirection: "column", width: "70%", minWidth:"290px" }}>
                         <h3 className="my-4">Nhập văn bản</h3>
-                        <textarea type="text-area" placeholder="Văn bản tốc ký..." style={{ height: "250px", border: "1px solid #000", borderRadius: "10px", outlineColor: "#007bff" }} />
-                        <button className="btn btn-dark ml-auto mt-2 text-center" style={{ minWidth: "120px" }}>Clear</button>
+                        <textarea type="text-area" value={text} onChange={event => setText(event.target.value)} placeholder="Văn bản tốc ký..." style={{ height: "250px", border: "1px solid #000", borderRadius: "10px", outlineColor: "#007bff", padding:"25px" }} />
+                        <button className="btn btn-dark ml-auto mt-2 text-center" onClick={event => setText("")} style={{ minWidth: "120px" }}>Clear</button>
                     </div>
                     <div style={{ width: "20%", minWidth:"290px" }}>
                         <h3 className="my-4">Lịch sử văn bản tốc ký</h3>

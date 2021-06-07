@@ -8,10 +8,8 @@ import Notification from './Notification';
 import { showNotification as show, checkWin } from './helpers/helpers';
 
 import './css/MainScreen.css';
-import MainSlideBarContainer from '../MainSlideBarContainer';
-import NavBar from '../NavBar';
 
-const words = ['application', 'programming', 'interface', 'wizard'];
+const words = ['ghen', 'thua', 'trung', 'quy'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function PlayScreen() {
@@ -19,6 +17,7 @@ function PlayScreen() {
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [showNotification, setShowNotification] = useState(false);
+    const [point, setPoint] = useState(0);
 
     useEffect(() => {
         const handleKeydown = event => {
@@ -28,12 +27,14 @@ function PlayScreen() {
                 if (selectedWord.includes(letter)) {
                     if (!correctLetters.includes(letter)) {
                         setCorrectLetters(currentLetters => [...currentLetters, letter]);
+                        setPoint(point + 5000);
                     } else {
                         show(setShowNotification);
                     }
                 } else {
                     if (!wrongLetters.includes(letter)) {
                         setWrongLetters(currentLetters => [...currentLetters, letter]);
+                        setPoint(point - 1000);
                     } else {
                         show(setShowNotification);
                     }
@@ -43,11 +44,11 @@ function PlayScreen() {
         window.addEventListener('keydown', handleKeydown);
 
         return () => window.removeEventListener('keydown', handleKeydown);
-    }, [correctLetters, wrongLetters, playable]);
+    }, [correctLetters, wrongLetters, playable, point]);
 
     function playAgain() {
         setPlayable(true);
-
+        setPoint(0)
         // Empty Arrays
         setCorrectLetters([]);
         setWrongLetters([]);
@@ -58,15 +59,16 @@ function PlayScreen() {
 
     return (
         <div>
-            <div style={{ display: 'flex', height: 50, backgroundColor: '#C4C4C4', alignItems: 'center', paddingLeft: 50 }}>Trò chơi: Hang Man</div>
+            <div style={{ display: 'flex', height: 50, backgroundColor: '#C4C4C4', alignItems: 'center', paddingLeft: 50 }}>Trò chơi: Người treo cổ</div>
             <div className="hangman-game">
                 <Header />
+                <p>Điểm hiện tại: {point}</p>
                 <div className="game-container">
                     <Figure wrongLetters={wrongLetters} />
                     <WrongLetters wrongLetters={wrongLetters} />
                     <Word selectedWord={selectedWord} correctLetters={correctLetters} />
                 </div>
-                <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
+                <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} point={point} />
                 <Notification showNotification={showNotification} />
             </div>
         </div>

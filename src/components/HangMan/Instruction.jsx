@@ -3,7 +3,7 @@ import React from 'react';
 const Instruction = ({setStep}) => {
 	return (
 		<div className="game1__step1">
-			<div className="game1__title">Trò chơi: Hang Man</div>
+			<div className="game1__title">Trò chơi: Người treo cổ</div>
 			<div className="game1__instruction">
 				<div className="game1__cat-img">
 					<img className="flip" src="https://i.imgur.com/yjRBm24.png" alt="CuteCat" style={{height: 256, width: 256}} />
