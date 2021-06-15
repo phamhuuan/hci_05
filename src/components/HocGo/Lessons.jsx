@@ -14,6 +14,7 @@ const Lessons = ({data, setLesson}) => {
 								<div style={{flex: 1}} />
 								<div onClick={() => setLesson(0, index + 1)} className="button4">Thẻ ghi nhớ</div>
 								<div onClick={() => setLesson(1, index + 1)} className="button4">Luyện viết</div>
+								<div onClick={() => setLesson(2, index + 1)} className="button4">Kiểm tra</div>
 								<div style={{flex: 1}} />
 							</div>
 							{index < 2 && <Tooltip title={'100%'}><div style={{height: 5, backgroundColor: 'gray', marginTop: 10, borderRadius: 5}} /></Tooltip>}
