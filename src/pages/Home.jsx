@@ -48,12 +48,12 @@ const Home = () => {
 	};
 
 	return (
-		<div style={{overflowX:"hidden"}}>
+		<div style={{ overflowX: "hidden" }}>
 			<MainSlideBarContainer />
 			<NavBar />
 			<div className="content-wrapper">
 				{/* <input value={state.value} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} /> */}
-				<div className="row" style={{height:"50px", backgroundColor:"#f4f6f9"}}></div>
+				<div className="row" style={{ height: "50px", backgroundColor: "#f4f6f9" }}></div>
 				<div className="row">
 					<div className="col-md-12">
 						<div className="card">
@@ -103,12 +103,12 @@ const Home = () => {
 											</div>
 										</div>
 									</div>*/}
-									
-										<div className="row text-center" style={{display: 'flex', flexDirection: 'row'}}>
-											<img style={{maxWidth: '100%'}} src={`${window.location.origin}/dist/img/chart.png`} alt="" />
-										</div>
-								
-								</div> 
+
+									<div className="row text-center" style={{ display: 'flex', flexDirection: 'row' }}>
+										<img style={{ maxWidth: '100%' }} src={`${window.location.origin}/dist/img/chart.png`} alt="" />
+									</div>
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -173,82 +173,100 @@ const Home = () => {
 									</tbody>
 								</table>
 							</div>
-							
-						</div> 
+
+						</div>
 						{/* card */}
-					</div> 
+					</div>
 					{/* md-6 */}
 					<div className="col-md-6">
 						<div className="card">
-             				<div className="card-header">
-                				<h3 className="card-title">Bảng xếp hạng tốc độ gõ tốc ký</h3>
-                			</div>
-             				<div className="card-body p-0">
-                				<ul className="products-list product-list-in-card pl-2 pr-2">
-                  					<li className="item">
-                    					<div className="product-img">
-                      						<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50"/>
-                    					</div>
-                    					<div className="product-info">
-                      						<a href="javascript:void(0)" className="product-title">Nguyễn Đức Nam
-                        					<span className=" badge badge-info float-right">300 WPM</span></a>
-											<span className="product-description">
-											⭐️⭐️⭐️⭐️⭐️
-                      						</span>
-                    					</div>
-                  					</li>
-
-                  					<li className="item">
-                    					<div className="product-img">
-                     		 				<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50"/>
-                    					</div>
-                    					<div className="product-info">
-											<a href="javascript:void(0)" className="product-title">Phạm Hữu An
-												<span className=" badge badge-info float-right">299 WPM</span></a>
-												<span className="product-description">
-											⭐️⭐️⭐️⭐️⭐️
-                      						</span>
-                    					</div>
-                  					</li>
-
+							<div className="card-header">
+								<h3 className="card-title">Bảng xếp hạng tốc độ gõ tốc ký</h3>
+							</div>
+							<div className="card-body p-0">
+								<ul className="products-list product-list-in-card pl-2 pr-2">
 									<li className="item">
 										<div className="product-img">
-										<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50"/>
+											<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50" />
 										</div>
 										<div className="product-info">
-										<a href="javascript:void(0)" className="product-title">
-											Hoàng Minh Nguyệt <span className="badge badge-info float-right">
-											150 WPM
-										</span>
-										</a>
-										<span className="product-description">
-											⭐️⭐️⭐️⭐️
-                      					</span>
+											<div className="row" style={{ display: "flex", alignItems: "center" }}>
+												<a href="javascript:void(0)" className="col product-title">Nguyễn Đức Nam</a>
+												<span className="col">10 giờ/tuần</span>
+												<span className="col">500 giờ 51 phút</span>
+												<div className="col">
+													<span className="badge badge-info float-right">300 WPM</span>
+												</div>
+											</div>
+											<span className="product-description">
+												⭐️⭐️⭐️⭐️⭐️
+											</span>
 										</div>
 									</li>
 
 									<li className="item">
 										<div className="product-img">
-											<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50"/>
+											<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50" />
 										</div>
 										<div className="product-info">
-											<a href="javascript:void(0)" className="product-title">Đỗ Đức Thuận<span className="badge badge-info float-right">100 WPM</span></a>
+											<div className="row" style={{ display: "flex", alignItems: "center" }}>
+												<a href="javascript:void(0)" className="col product-title">Phạm Hữu An</a>
+												<span className="col">8 giờ/tuần</span>
+												<span className="col">420 giờ 12 phút</span>
+												<div className="col"><span className="badge badge-info float-right">299 WPM</span></div>
+											</div>
 											<span className="product-description">
-											⭐️⭐️⭐️
-                      						</span>
+												⭐️⭐️⭐️⭐️⭐️
+											</span>
 										</div>
 									</li>
-                				</ul>
-              				</div>
-              				<div className="card-footer text-center">
-                				<a href="javascript:void(0)" className="uppercase">Xem tất cả bảng xếp hạng</a>
+
+									<li className="item">
+										<div className="product-img">
+											<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50" />
+										</div>
+										<div className="product-info">
+											<div className="row" style={{ display: "flex", alignItems: "center" }}>
+												<a href="javascript:void(0)" className="col product-title">
+													Hoàng Minh Nguyệt
+												</a>
+												<span className="col">6 giờ/tuần</span>
+												<span className="col">100 giờ 23 phút</span>
+												<div className="col"><span className="badge badge-info float-right">250 WPM</span></div>
+											</div>
+											<span className="product-description">
+												⭐️⭐️⭐️⭐️
+											</span>
+										</div>
+									</li>
+
+									<li className="item">
+										<div className="product-img">
+											<img src="dist/img/default-150x150.png" alt="Product Image" className="img-size-50" />
+										</div>
+										<div className="product-info">
+											<div className="row" style={{ display: "flex", alignItems: "center" }}>
+												<a href="javascript:void(0)" className="col product-title">Đỗ Đức Thuận</a>
+												<span className="col">4 giờ/tuần</span>
+												<span className="col">150 giờ 30 phút</span>
+												<div className="col"><span className="badge badge-info float-right">100 WPM</span></div>
+											</div>
+											<span className="product-description">
+												⭐️⭐️⭐️
+											</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div className="card-footer text-center">
+								<a href="javascript:void(0)" className="uppercase">Xem tất cả bảng xếp hạng</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
 	);
 };
 
