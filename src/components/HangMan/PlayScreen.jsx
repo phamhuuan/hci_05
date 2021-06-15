@@ -9,7 +9,9 @@ import { showNotification as show, checkWin } from './helpers/helpers';
 
 import './css/MainScreen.css';
 
-const words = ['ghen', 'thua', 'trung', 'quy'];
+const words = ['hci'];
+const tohopphims = ['H', 'TZ', 'PR','*-I','K'];
+// const tohopphim = ['h', '0', 'n','i','k'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function PlayScreen() {
@@ -18,11 +20,20 @@ function PlayScreen() {
     const [wrongLetters, setWrongLetters] = useState([]);
     const [showNotification, setShowNotification] = useState(false);
     const [point, setPoint] = useState(0);
+    const [count, setCount] = useState(0);
+    const [tohopphim, setTohopphim] = useState("");
 
     useEffect(() => {
         const handleKeydown = event => {
             const { key, keyCode } = event;
-            if (playable && keyCode >= 65 && keyCode <= 90) {
+            setTohopphim(tohopphim+tohopphims[count]+" ")
+            setCount(count+1)
+            console.log(count);
+            // setTimeout(() => {
+            //     setCount(count+1)
+            //   }, 20);
+            
+            if (playable && keyCode >= 65 && keyCode <= 90  ) {
                 const letter = key.toLowerCase();
                 if (selectedWord.includes(letter)) {
                     if (!correctLetters.includes(letter)) {
@@ -39,12 +50,15 @@ function PlayScreen() {
                         show(setShowNotification);
                     }
                 }
+               
             }
+            
+
         }
         window.addEventListener('keydown', handleKeydown);
 
         return () => window.removeEventListener('keydown', handleKeydown);
-    }, [correctLetters, wrongLetters, playable, point]);
+    }, [correctLetters, wrongLetters, playable, point, count, tohopphim]);
 
     function playAgain() {
         setPlayable(true);
@@ -52,6 +66,8 @@ function PlayScreen() {
         // Empty Arrays
         setCorrectLetters([]);
         setWrongLetters([]);
+        setTohopphim('');
+        setCount(0);
 
         const random = Math.floor(Math.random() * words.length);
         selectedWord = words[random];
@@ -63,6 +79,8 @@ function PlayScreen() {
             <div className="hangman-game">
                 <Header />
                 <p>Điểm hiện tại: {point}</p>
+                <p> <b>Tổ hợp phím đã nhập</b> </p>
+                <p><h4>{tohopphim}</h4></p>
                 <div className="game-container">
                     <Figure wrongLetters={wrongLetters} />
                     <WrongLetters wrongLetters={wrongLetters} />

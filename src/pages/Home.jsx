@@ -28,6 +28,7 @@ const Home = () => {
 		} else {
 			setState(state => ({ ...state, numberOfKeys: state.numberOfKeys + 1, shouldSearch: false }));
 		}
+		console.log(key,"down");
 	};
 
 	const handleKeyUp = () => {
@@ -45,6 +46,7 @@ const Home = () => {
 		} else {
 			setState(state => ({ ...state, numberOfKeys: state.numberOfKeys - 1 }));
 		}
+		// console.log(key,"up");
 	};
 
 	return (
