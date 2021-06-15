@@ -14,7 +14,17 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
+import TextField from '@material-ui/core/TextField';
+
 const useStyles = makeStyles((theme) => ({
+
+    root: {
+        '& > *': {
+          margin: theme.spacing(1),
+          width: '25ch',
+        },
+      },
+
     modal: {
         display: 'flex',
         alignItems: 'center',
@@ -57,7 +67,7 @@ TabPanel.propTypes = {
 };
 
 const Test = () => {
-    const [value, setValue] = React.useState(2);
+    const [value, setValue] = React.useState(0);
     const [progress, setProgress] = React.useState(0);
 
     const classes = useStyles();
@@ -77,10 +87,14 @@ const Test = () => {
         setOpen(false);
     };
 
-
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const handleSubmit = () => {
+        setValue(value+1)
+    }
+
     return (
         <div style={{ width: '100%' }}>
             <Paper style={{ textAlign: 'center' }} square>
@@ -116,23 +130,75 @@ const Test = () => {
                 </Tabs>
                 <TabPanel value={value} index={0}>
 
-                    <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques1.png`} alt="" />
+                    {/* <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques1.png`} alt="" /> */}
+                    <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">đ</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập tổ hợp phím tốc ký tương ứng" />
+                    </form>
 
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques2.png`} alt="" />
+                    {/* <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques2.png`} alt="" /> */}
+                    <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">ng</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập tổ hợp phím tốc ký tương ứng" />
+                    </form>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques3.png`} alt="" />
+                    {/* <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques3.png`} alt="" /> */}
+                    <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">KP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques4.png`} alt="" />
+                    {/* <img style={{ maxWidth: '900px' }} src={`${window.location.origin}/dist/img/ques4.png`} alt="" /> */}
+                    <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">kh</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập tổ hợp phím tốc ký tương ứng" />
+                    </form>
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                    Item Two
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
-                    Item Three
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
+                </TabPanel>
+                <TabPanel value={value} index={6}>
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
+                </TabPanel>
+                <TabPanel value={value} index={7}>
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
+                </TabPanel>
+                <TabPanel value={value} index={8}>
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
+                </TabPanel>
+                <TabPanel value={value} index={9}>
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
+                </TabPanel>
+                <TabPanel value={value} index={10}>
+                <Typography style={{ marginTop: '20px' }} variant="h4" color="textSecondary"  id="transition-modal-title">TP</Typography>
+                    <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+                        <TextField style={{ width: '900px' }} id="standard-basic" label="Nhập chữ quốc ngữ tương ứng" />
+                    </form>
                 </TabPanel>
             </Paper>
             <Button style={{ float: 'right', marginRight: 20, marginTop: 20 }} variant="contained" color="primary" size="large" onClick={handleOpen}>
@@ -173,10 +239,16 @@ const Test = () => {
                         </Box>
                         <Typography id="transition-modal-description" variant="h5" align="center" component="div">Tuyệt vời!😍😍</Typography>
                         <Box m={2}>
-                            <Typography variant="p" align="center" component="p">Bạn làm sai 2 trên tổng só 20 câu.</Typography>
+                            <Typography variant="p" align="center" component="p">Chúc mừng bạn đã hoàn thành Bài học số 1</Typography>
                         </Box>
-                        <Button style={{ width: "100%", height: 50 }} variant="contained" color="primary" onClick={handleClose}>
+                        <Button style={{ width: "100%", height: 50}} variant="contained" color="primary" onClick={handleClose}>
                             KIỂM TRA LẠI
+                        </Button>
+                        <Button style={{ width: "100%", height: 50, marginTop:"5px"  }} variant="contained" color="primary" onClick={handleClose}>
+                            LUYỆN TẬP BÀI 1
+                        </Button>
+                        <Button style={{ width: "100%", height: 50, marginTop:"5px"  }} variant="contained" color="primary" onClick={handleClose}>
+                            HỌC TIẾP BÀI 2
                         </Button>
                     </div>
                 </Fade>

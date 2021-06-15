@@ -79,10 +79,10 @@ $(function () {
 
   var $visitorsChart = $('#visitors-chart')
   // eslint-disable-next-line no-unused-vars
-	var time = new Date().getTime();
+	var time = new Date().getTime() - 86400000 * 6;
 	var labels = [];
 	for (var i = 0; i < 7; i++) {
-		labels.push(`${new Date(time).getDate()}/${new Date(time + (86400000 * i)).getMonth()+1}`)
+		labels.push(`${new Date(time + (86400000 * i)).getDate()}/${new Date(time + (86400000 * i)).getMonth()+1}`)
 	}
   var visitorsChart = new Chart($visitorsChart, {
     data: {
